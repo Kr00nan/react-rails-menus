@@ -2,7 +2,7 @@ import React from 'react';
 import {Form} from 'semantic-ui-react';
 
 class ItemForm extends React.Component {
-  state = {name: ''};
+  state = {name: '', meal_type: ''};
 
   handleChange = (e) => {
     this.setState({ name: e.target.value});
@@ -10,8 +10,8 @@ class ItemForm extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    this.props.addItem(this.state.name);
-    this.setState({name: ''});
+    this.props.addItem(this.state.name, this.state.meal_type);
+    this.setState({name: '', meal_type: ''});
   }
 
   render() {
@@ -22,6 +22,13 @@ class ItemForm extends React.Component {
           placeholder="Name of the dish"
           required
           value={this.state.name}
+          onChange={this.handleChange}
+        />
+        <Form.Input
+          label="Meal Type"
+          placeholder="Breakfast, Lunch, or Dinner"
+          required
+          value={this.state.meal_type}
           onChange={this.handleChange}
         />
       </Form>
