@@ -4,6 +4,14 @@ import ItemList from './components/ItemList';
 import axios from 'axios';
 import {Container} from 'semantic-ui-react';
 
+// So, I got the data passing from my rails app to my react app. The more I fiddled with it after that, the more I broke it.
+
+// I wanted to create one table on the backend with the meal_type being which menu the food item would populate on the front end.
+
+// There would be 3 menus present across 3 columns with the food items populating the menus.
+
+// Adding an item would allow the user to specify which menu to display it. I got the dropdown menu working...
+
 class App extends React.Component {
   state = {items: []};
 
