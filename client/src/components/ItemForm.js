@@ -1,5 +1,11 @@
 import React from 'react';
-import {Form} from 'semantic-ui-react';
+import {Form, Select} from 'semantic-ui-react';
+
+const options = [
+  { key: 'b', text: 'Breakfast', value: 'breakfast' },
+  { key: 'l', text: 'Lunch', value: 'lunch' },
+  { key: 'd', text: 'Dinner', value: 'Dinner' },
+]
 
 class ItemForm extends React.Component {
   state = {name: '', meal_type: ''};
@@ -17,20 +23,22 @@ class ItemForm extends React.Component {
   render() {
     return (
       <Form onSubmit={this.handleSubmit}>
+        <Form.Group>
         <Form.Input
           label="Name"
           placeholder="Name of the dish"
           required
           value={this.state.name}
           onChange={this.handleChange}
-        />
-        <Form.Input
-          label="Meal Type"
-          placeholder="Breakfast, Lunch, or Dinner"
-          required
+          />
+        <Form.Field
+          control={Select}
+          label='Meal Type'
+          options={options}
           value={this.state.meal_type}
-          onChange={this.handleChange}
-        />
+          placeholder='Meal Type'
+          />
+        </Form.Group>
       </Form>
     )
   }

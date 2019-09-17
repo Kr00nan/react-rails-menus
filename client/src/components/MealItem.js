@@ -1,11 +1,11 @@
 import React from 'react'
-import { Checkbox, Header, Button, Icon } from 'semantic-ui-react'
+import { Header, Button, Icon } from 'semantic-ui-react'
 
 const MealItem = ({ id, name, meal_type, updateItem, deleteItem}) => (
   <div style={styles.flex}>
-    <Header>
-      { name }
-    </Header>
+    <Header as='h3'>{name}</Header>
+    <br />
+    <br />
     <p>{meal_type}</p>
   </div>
 )

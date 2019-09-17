@@ -12,6 +12,7 @@ class Api::MenuItemsController < ApplicationController
       render json: item
     else
       render json: {errors: item.errors}, status: :unprocessable_entity
+    end
   end
 
   def update
